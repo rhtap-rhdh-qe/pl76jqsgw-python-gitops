@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pl76jqsgw-python-gitops
+  description: This is GitOps manifest for pl76jqsgw-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pl76jqsgw-python
+    backstage.io/kubernetes-id: pl76jqsgw-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pl76jqsgw-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pl76jqsgw-python
